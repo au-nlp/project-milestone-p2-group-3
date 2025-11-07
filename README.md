@@ -74,11 +74,7 @@ No extrenal datasets are used. All modeling and evaluation rely on this dataset.
   - **Constrained BERTopic** with anchor guidance.  
   - **Post-processing of clusters** using nearest anchor similarity.  
   - **Hybrid embedding model** combining text and categorical metadata.
- - Experiment with different clustering algorithms:
- 	- KMEANS
-	- KMEDIOID
-	- DBSCAN
-    - HDBSCAN 
+
 
 ### **4. Evaluation**
 - **Intrinsic metrics:**  
