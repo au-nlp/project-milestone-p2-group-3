@@ -18,7 +18,7 @@ Our project contributes a **hybrid topic modeling pipeline** for large-scale bio
    Unlike unsupervised clustering (e.g., KMeans only on embeddings), our anchored method will produce interpretable topics that domain experts can understand and validate.
 
 4. **Evaluation Framework:**  
-   We propose both intrinsic (topic coherence, cluster quality) to quantify interpretability and performance.
+   We propose evaluation metrics related to cluster quality and anchor quality and influence of the identified clusters. As this framework is new and the goal is interpretability we create an interface that encapsulates the pipeline and try it out with unseen medical text to verify the interpretability and correctness (observing that result aligns with input text) of this proposed framework.
 
 5. **Open and Reproducible Pipeline:**  
    The implementation is provided in a single `main.ipynb` notebook with documented preprocessing, embedding, and clustering steps for reproducibility and transparency. (process step after preprocessing is future work)
@@ -55,7 +55,7 @@ No extrenal datasets are used. All modeling and evaluation rely on this dataset.
 ## **Methods**
 
 ### **1. Text Embedding**
-- Use transformer-based embeddings (e.g., `sentence-transformers/all-MiniLM-L6-v2` or domain-specific models like BioClinicalBERT). (this decision will be made after training and seeing the results)
+- Use of domain-specific models like BioClinicalBERT.
 - Each trial’s free text content will be encoded into an embedding vector representation.  
 - We may use dimensionality reduction (PCA or UMAP) for visualization and clustering efficiency.
 
@@ -65,20 +65,20 @@ No extrenal datasets are used. All modeling and evaluation rely on this dataset.
   - `condition_browse_module_clean`
   - `intervention_browse_module_clean`
   - `brief_summary_clean`
+- The goal is to create a group of topics (any number of topics we discover) and each topic will consists of at most $n$ keywords that describe that topic well.
 - Convert all anchors and features into embedding vectors using the same transformer model and test different feature combinations to determine which configuration results in the most interpretable clusters.
 
 ### **3. Anchored Topic Modeling**
 - Modify clustering to be *anchor-guided*:  
-  - Anchors act as reference points influencing the similarity structure. (e.g. embeddings close to oncology-related anchors are softly pulled into oncology clusters)  
-- Evaluate and experiment with different implementations such as:  
-  - **Constrained BERTopic** with anchor guidance.  
+  - As there will be anchor embeddings as well, it is possible to use them to influence the clustering structure to make it topic-based (like KMeans initial centroids can be these anchor embeddings)
+  - Anchors act as reference points influencing the clustering structure. (e.g. embeddings close to oncology-related anchors are softly pulled into oncology clusters)  
+- Evaluate and experiment with implementations such as:  
   - **Post-processing of clusters** using nearest anchor similarity.  
-  - **Hybrid embedding model** combining text and categorical metadata.
  - Experiment with different clustering algorithms:
  	- KMEANS
 	- KMEDIOID
 	- DBSCAN
-    - HDBSCAN 
+  - HDBSCAN 
 
 ### **4. Evaluation**
 - **Intrinsic metrics:**  
