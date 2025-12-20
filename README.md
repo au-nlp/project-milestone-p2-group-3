@@ -145,3 +145,15 @@ Each member contributes complementary skills to ensure balanced development:
 ## Recommendation
 
 It is recommended to use Kaggle API to get the datasets if running is intended
+
+## * Datasets and workflow pipelines we tested on*
+Embeddings dataset on Kaggle: `https://www.kaggle.com/datasets/peetertarvas/embeddings-dataset/data` <br>
+Anchors dataset on Kaggle: `https://www.kaggle.com/datasets/peetertarvas/anchors2` <br>
+Main overall working dataset from data pre-processing: `https://www.kaggle.com/datasets/peetertarvas/clinical` <br>
+
+<br><br>
+Others: <br>
+Main testing notebook: `https://www.kaggle.com/code/peetertarvas/main-run` <br>
+Generating the preprocessing: `https://www.kaggle.com/code/peetertarvas/preprocessing-train` <br>
+Separate pipeline for embeddings generation: `https://www.kaggle.com/code/peetertarvas/embeddings` <br>
+Anchor generation pipeline: `https://www.kaggle.com/code/peetertarvas/anchor-generation` <br>
