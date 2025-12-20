@@ -111,9 +111,9 @@ No extrenal datasets are used. All modeling and evaluation rely on this dataset.
 
 Each member contributes complementary skills to ensure balanced development:
 
-- **Peeter Tarvas:** Data preprocessing and Anchor extraction and integration with topic modeling, report writing, clustering, testing
-- **Eliasz Piotr:** Data preprocessing, visualization and evaluation, report writing, clustering, testing
-- **⁨Kornidesz Máté:** Data preprocessing and embedding pipeline implementation, report writing, interface for general usage, clustering, testing
+- **Peeter Tarvas:** Data preprocessing and Anchor extraction and integration with topic modeling, embedding generation for anchors and dataset, report writing, clustering, testing, fine-tuning 
+- **Eliasz Piotr:** Data preprocessing, visualization and evaluation, report writing, clustering, testing, fine-tuning, readme updates, interface for general usage
+- **⁨Kornidesz Máté:** Data preprocessing and embedding pipeline implementation, report writing, interface for general usage, clustering, testing, fine-tuning
 
 ### **Internal Milestones** (proposed deadlines in Proposed Deadline section)
 - Completion of embedding functions  
