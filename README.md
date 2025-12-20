@@ -93,38 +93,52 @@ No extrenal datasets are used. All modeling and evaluation rely on this dataset.
 
 ## **Proposed Timeline**
 
-- **Phase 1 – Data Familiarization and Preprocessing:**  
+- **Phase 1 – Data Familiarization and Preprocessing:**  *(-2025.11.01.)* <br>
   Load the dataset, explore structure and quality, extract textual and metadata features, handle missing values.
 
-- **Phase 2 – Embedding Generation:**  
+- **Phase 2 – Embedding Generation:**  *(-2025.11.15.)* <br>
   Generate transformer embeddings for trial descriptions and anchor terms, validate embedding quality through nearest-neighbor inspection.
 
-- **Phase 3 – Anchored Clustering / Topic Modeling:**  
+- **Phase 3 – Anchored Clustering / Topic Modeling:**  *(-2025.11.29.)* <br>
   Implement either anchor-guided clustering or modified BERTopic, experiment with anchor weighting and features, and fine-tune the number of topics.
 
-- **Phase 4 – Evaluation:**  
+- **Phase 4 – Evaluation:**  *(-2025.12.13.)* <br>
   Measure alignment with pre-known categories, observe the interpretability, and visualize results.
 
-- **Phase 5 – Documentation and Report Preparation:**  
+- **Phase 5 – Documentation and Report Preparation:**  *(-2025.12.19.)* <br>
   Finalize code and visualizations, update README, and prepare the final report and presentation.
 
 ## **Organization within the Team**
 
 Each member contributes complementary skills to ensure balanced development:
 
-- **Peeter Tarvas:** Data preprocessing and Anchor extraction and integration with topic modeling, report writing
-- **Eliasz Piotr:** Data preprocessing, visualization and evaluation, report writing  
-- **⁨Kornidesz Máté:** Data preprocessing and embedding pipeline implementation, report writing
+- **Peeter Tarvas:** Data preprocessing and Anchor extraction and integration with topic modeling, report writing, clustering, testing
+- **Eliasz Piotr:** Data preprocessing, visualization and evaluation, report writing, clustering, testing
+- **⁨Kornidesz Máté:** Data preprocessing and embedding pipeline implementation, report writing, interface for general usage, clustering, testing
 
-### **Internal Milestones**
+### **Internal Milestones** (proposed deadlines in Proposed Deadline section)
 - Completion of embedding functions  
 - Anchor extraction and validation
 - First clustering results with anchors 
 - Evaluation metrics and visual summaries
 - Final report and README polishing before Milestone P3 submission
+  
+## Technical Implementation (Milestone P3)
+ - `emilyalsentzer/Bio_ClinicalBERT` was used for emedding generation (because of domain specific knowledge)
+ - KMeans was used for clustering (as Spherical KMeans to handle curse of dimensionality (D-768))
+ - train/test set was introduced to measure generalization correctly
+ - topics (17) were created with top keywords representing them
+ - vector averaging was used during anchor embedding generation to handle 
 
 ## Appendix
 ### Contents of repository:
  - `main.ipynb` : main notebook containing preprocessing and analysation pipeline
  - `README.md` : readme file containging the project description
  - `.gitignore` : gitignore file to avoid tracking unnecessary files
+ - `scripts` folder: external scripts used during development (extrenal to main.ipynb)
+ - `kmeans-model` folder: contains the model.npy for kmeans centroids
+ - `anchor-groups` folder: contains the topics and related keywords as a json
+ - `report.pdf`: NeuralIPS report of semester-long assignment and research 
+
+## Recommendation
+
