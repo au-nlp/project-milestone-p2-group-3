@@ -82,8 +82,7 @@ No extrenal datasets are used. All modeling and evaluation rely on this dataset.
 
 ### **4. Evaluation**
 - **Intrinsic metrics:**  
-  - Topic coherence (UMass / c_v).  
-  - Silhouette score and intra-cluster variance
+  - Silhouette score and intra-cluster variance, other clustering measuring metrics
   - Anchor lift, anchor coverage and other anchoring related metrics
 
 ### **5. Visualization and Interpretation**
