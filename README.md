@@ -141,6 +141,7 @@ Each member contributes complementary skills to ensure balanced development:
  - `kmeans-model` folder: contains the model.npy for kmeans centroids
  - `anchor-groups` folder: contains the topics and related keywords as a json
  - `report.pdf`: NeuralIPS report of semester-long assignment and research 
+ - `Deklarationsskabelon_ENGLISH.pdf`: AI usage declaration
 
 ## Recommendation
 
