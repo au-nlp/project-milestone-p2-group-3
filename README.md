@@ -128,7 +128,10 @@ Each member contributes complementary skills to ensure balanced development:
  - KMeans was used for clustering (as Spherical KMeans to handle curse of dimensionality (D-768))
  - train/test set was introduced to measure generalization correctly
  - topics (17) were created with top keywords representing them
- - vector averaging was used during anchor embedding generation to handle 
+ - vector averaging was used during anchor embedding generation to handle artifical context
+ - post-anchoring was used to assign topics to clusters (changes only semantically, not the clustering geometry)
+ - multiple metrics with clustering visualization was used to measure the clustering and anchoring quality and influence
+ - a generalized interface was created to make it possible for any medical text to model topic
 
 ## Appendix
 ### Contents of repository:
@@ -142,3 +145,4 @@ Each member contributes complementary skills to ensure balanced development:
 
 ## Recommendation
 
+It is recommended to use Kaggle API to get the datasets if running is intended
